@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Not Found</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'>
+<style>
+
+*
+{
+  font-family: 'PT Sans Caption', sans-serif, 'arial', 'Times New Roman';
+}
+/* Error Page */
+    .error .clip .shadow
+    {
+        height: 180px;  /*Contrall*/
+    }
+    .error .clip:nth-of-type(2) .shadow
+    {
+        width: 130px;   /*Contrall play with javascript*/ 
+    }
+    .error .clip:nth-of-type(1) .shadow, .error .clip:nth-of-type(3) .shadow
+    {
+        width: 250px; /*Contrall*/
+    }
+    .error .digit
+    {
+        width: 150px;   /*Contrall*/
+        height: 150px;  /*Contrall*/
+        line-height: 150px; /*Contrall*/
+        font-size: 120px;
+        font-weight: bold;
+    }
+    .error h2   /*Contrall*/
+    {
+        font-size: 32px;
+    }
+    .error .msg /*Contrall*/
+    {
+        top: -190px;
+        left: 30%;
+        width: 80px;
+        height: 80px;
+        line-height: 80px;
+        font-size: 32px;
+    }
+    .error span.triangle    /*Contrall*/
+    {
+        top: 70%;
+        right: 0%;
+        border-left: 20px solid #535353;
+        border-top: 15px solid transparent;
+        border-bottom: 15px solid transparent;
+    }
+
+
+    .error .container-error-404
+    {
+      margin-top: 2%;
+        position: relative;
+        height: 250px;
+        padding-top: 40px;
+    }
+    .error .container-error-404 .clip
+    {
+        display: inline-block;
+        transform: skew(-45deg);
+    }
+    .error .clip .shadow
+    {
+        
+        overflow: hidden;
+    }
+    .error .clip:nth-of-type(2) .shadow
+    {
+        overflow: hidden;
+        position: relative;
+        box-shadow: inset 20px 0px 20px -15px rgba(150, 150, 150,0.8), 20px 0px 20px -15px rgba(150, 150, 150,0.8);
+    }
+    
+    .error .clip:nth-of-type(3) .shadow:after, .error .clip:nth-of-type(1) .shadow:after
+    {
+        content: "";
+        position: absolute;
+        right: -8px;
+        bottom: 0px;
+        z-index: 9999;
+        height: 100%;
+        width: 10px;
+        background: linear-gradient(90deg, transparent, rgba(173,173,173, 0.8), transparent);
+        border-radius: 50%;
+    }
+    .error .clip:nth-of-type(3) .shadow:after
+    {
+        left: -8px;
+    }
+    .error .digit
+    {
+        position: relative;
+        top: 8%;
+        color: white;
+        background: #07B3F9;
+        border-radius: 50%;
+        display: inline-block;
+        transform: skew(45deg);
+    }
+    .error .clip:nth-of-type(2) .digit
+    {
+        left: -10%;
+    }
+    .error .clip:nth-of-type(1) .digit
+    {
+        right: -20%;
+    }.error .clip:nth-of-type(3) .digit
+    {
+        left: -20%;
+    }    
+    .error h2
+    {
+        color: #A2A2A2;
+        font-weight: bold;
+        padding-bottom: 20px;
+    }
+    .error .msg
+    {
+        position: relative;
+        z-index: 9999;
+        display: block;
+        background: #535353;
+        color: #A2A2A2;
+        border-radius: 50%;
+        font-style: italic;
+    }
+    .error .triangle
+    {
+        position: absolute;
+        z-index: 999;
+        transform: rotate(45deg);
+        content: "";
+        width: 0; 
+        height: 0; 
+    }
+
+/* Error Page */
+@media(max-width: 767px)
+{
+    /* Error Page */
+            .error .clip .shadow
+            {
+                height: 100px;  /*Contrall*/
+            }
+            .error .clip:nth-of-type(2) .shadow
+            {
+                width: 80px;   /*Contrall play with javascript*/ 
+            }
+            .error .clip:nth-of-type(1) .shadow, .error .clip:nth-of-type(3) .shadow
+            {
+                width: 100px; /*Contrall*/
+            }
+            .error .digit
+            {
+                width: 80px;   /*Contrall*/
+                height: 80px;  /*Contrall*/
+                line-height: 80px; /*Contrall*/
+                font-size: 52px;
+            }
+            .error h2   /*Contrall*/
+            {
+                font-size: 24px;
+            }
+            .error .msg /*Contrall*/
+            {
+                top: -110px;
+                left: 15%;
+                width: 40px;
+                height: 40px;
+                line-height: 40px;
+                font-size: 18px;
+            }
+            .error span.triangle    /*Contrall*/
+            {
+                top: 70%;
+                right: -3%;
+                border-left: 10px solid #535353;
+                border-top: 8px solid transparent;
+                border-bottom: 8px solid transparent;
+            }
+.error .container-error-404
+  {
+    height: 150px;
+  }
+        /* Error Page */
+}
+
+/*--------------------------------------------Framework --------------------------------*/
+
+.overlay { position: relative; z-index: 20; } /*done*/
+    .ground-color { background: white; }  /*done*/
+    .item-bg-color { background: #EAEAEA } /*done*/
+    
+    /* Padding Section*/
+        .padding-top { padding-top: 10px; } /*done*/
+        .padding-bottom { padding-bottom: 10px; }   /*done*/
+        .padding-vertical { padding-top: 10px; padding-bottom: 10px; }
+        .padding-horizontal { padding-left: 10px; padding-right: 10px; }
+        .padding-all { padding: 10px; }   /*done*/
+
+        .no-padding-left { padding-left: 0px; }    /*done*/
+        .no-padding-right { padding-right: 0px; }   /*done*/
+        .no-vertical-padding { padding-top: 0px; padding-bottom: 0px; }
+        .no-horizontal-padding { padding-left: 0px; padding-right: 0px; }
+        .no-padding { padding: 0px; }   /*done*/
+    /* Padding Section*/
+
+    /* Margin section */
+        .margin-top { margin-top: 10px; }   /*done*/
+        .margin-bottom { margin-bottom: 10px; } /*done*/
+        .margin-right { margin-right: 10px; } /*done*/
+        .margin-left { margin-left: 10px; } /*done*/
+        .margin-horizontal { margin-left: 10px; margin-right: 10px; } /*done*/
+        .margin-vertical { margin-top: 10px; margin-bottom: 10px; } /*done*/
+        .margin-all { margin: 10px; }   /*done*/
+        .no-margin { margin: 0px; }   /*done*/
+
+        .no-vertical-margin { margin-top: 0px; margin-bottom: 0px; }
+        .no-horizontal-margin { margin-left: 0px; margin-right: 0px; }
+
+        .inside-col-shrink { margin: 0px 20px; }    /*done - For the inside sections that has also Title section*/ 
+    /* Margin section */
+
+    hr
+    { margin: 0px; padding: 0px; border-top: 1px dashed #999; }
+ 
+    ol{
+        text-align: center;
+        margin: 1em;
+        color: darkgray;
+        font-weight: 100;
+        line-height: 2.3em;
+    }
+    li{
+        font-size: 20px;
+        font-weight: 100;
+    }
+    
+    #suggestions{
+        font-size: 20px;
+        text-align: center;
+        padding: 2em;
+        font-family: monospace;
+    }
+    .button {
+      font-weight: 300;
+      color: #fff;
+      font-size: 1.2em;
+      text-decoration: none;
+      border: 1px solid #efefef;
+      padding: 1em;
+      background: #007aff;
+      border-radius: 3px;
+      float: left;
+      margin: 6em 0 0 -155px;
+      left: 50%;
+      position: relative;
+      transition: all .3s linear;
+    }
+
+    .button:hover {
+      background-color: #fff;
+      color: #007aff;
+        box-shadow: 0px 0px 5px -2px grey;
+    }
+
+</style>
+</head>
+<body>
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<link href='https://fonts.googleapis.com/css?family=Anton|Passion+One|PT+Sans+Caption' rel='stylesheet' type='text/css'>
+            <div class="error">
+                <div class="container-floud">
+                    <div class="col-xs-12 ground-color text-center">
+                        <div class="container-error-404">
+                            <div class="clip"><div class="shadow"><span class="digit thirdDigit"></span></div></div>
+                            <div class="clip"><div class="shadow"><span class="digit secondDigit"></span></div></div>
+                            <div class="clip"><div class="shadow"><span class="digit firstDigit"></span></div></div>
+                            <div class="msg">OH!<span class="triangle"></span></div>
+                        </div>
+                        <h2 class="h1">Sorry! Page not found. Possible reason(s):</h2>
+                        <ol>
+                            <li>Misspelled input. (Check Suggestions below)</li>
+                            <li>The smartwatch name do not exists in the database.</li>
+                        </ol>
+                        <input type="hidden" value="{{ name }}" id="movie_name" oninput="checkSimilarity()" readonly/>
+                        <hr>
+                        <p>Did you mean?</p>
+                        <span id="suggestions"></span>
+                    </div>
+                    <a class="button" onClick="goBack()"><i class="fas fa-home"></i> Go Back to Home Page &amp; Try Again.</a>
+                </div>
+            </div>
+</body>
+<script>
+function goBack() {
+  window.history.back();
+}
+</script>
+<script>
+    all_titles =[
+"HUAWEI WATCH FIT Smartwatch with Slim Metal Body, 1.64” Vivid AMOLED Display, Quick-Workout Animations, 10 Days Battery Life, Oxygen Saturation Detection, Heart Rate Monitoring, Graphite Black",
+"AGPTEK Smart Watch for Android and iOS Phones, Full Touch Fitness Tracker with Heart Rate Monitor, DIY Watch Face and Multiple Sports,IP68 Waterproof Smartwatch for Men Women (Black)",
+"Fitbit Versa 3, Health & Fitness Smartwatch with GPS, 24/7 Heart Rate, Voice Assistant & up to 6+ Days Battery, Black/Black Aluminium",
+"Smart Watch Men Women Smart band Blood Pressure Measurement Waterproof Fitness Tracker Bracelet Heart Rate Monitor Smart watch",
+"Samsung Galaxy Watch 46mm SM-R800NZSAXSG - Silver",
+"HUAWEI WATCH GT 2 Pro Smartwatch, 1.39",
+"Huawei Latona Smartwatch with GPS, 46mm, GT2 Black",
+"HW12 Full Screen Smart Watch 40MM Women Men Smartwatch Split Screen Bluetooth HD Call Play Music Sport Wrist (blue)",
+"IDO ID107 Smart Bracelet Heart Rate Monitor Call Reminder Pedometer",
+"OUYAWEI W34 Bluetooth Call Smart Watch ECG Heart Rate Monitor Smartwatch for Android iPhone Xiaomi black",
+"New Zeblaze Hybrid 2 Smartwatch Heart Rate Waterproof Sleep Fitness Tracker",
+"2020 new Smartwatch IWO15 W26 44mm Watch 6 Smart Watch ECG Heart Rate Monitor Temperature Waterproof IP68 PK IWO 11 IWO 8 IWO 13,Black",
+"IP67 P8 Smart Watch Wristband Men Women Monitor Smartwatch Tracker For Phone",
+"HOODLI's Smartwatch W26 + Extra Replacement Strap (Nike+ Series) - 1.75 inch Full Touch HD Screen - Fitness Watch - ECG Heart Rate Monitor Waterproof Bluetooth Call (Nike+ Black)",
+"New Smartwatch Zeblaze Crystal 3 IP67 Long Standby IPS Display Smart Watch",
+"Smart Watch - 321OU Touch Screen Bluetooth Smart Wrist Watch Smartwatch Phone Fitness Tracker with SIM SD Card Slot Camera Pedometer for iPhone iOS Samsung LG Android for Women Men Kids (Silver)",
+"BT01 Smart Watch Body IP68 Waterproof Heart Rate Fitness Tracker",
+"B BRAND CODE U68 PLUS Large Touch Screen 1.6 Inch Spin Button Smartwatch for men Fitness Waterproof Heart Rate Sleep Phone Call Message Alarm 30 Days Super Long Standby Free Mobile Holder(BLACK)",
+"Zeblaze VIBE 5 PRO Color Touch Display  IP67 Smart Watch",
+"B BRAND CODE T900 Smartwatch for men Fitness Tracker IP67 Shower Waterproof Touch Screen Watches Phone Call Speaker Heart Rate Sleep Monitor Trackers Pedometer Phone Call Message Notification (BLACK)",
+"ZL13 Smart Watch Women Stainless Steel Color screen Smartwatch with Heart Rate",
+"U68 Smartwatch for men Fitness Waterproof Large Touch Screen 1.6 Inch PhoneCall Heart Rate Sleep Trackers Pedometer Call Message Alarm 30 Days Super Long Standby",
+"SAMSUNG Galaxy Watch 3 45mm Stainless Steel - Black, SM-R840",
+"Apple Watch Series 3-38 mm, Space Gray Aluminum Case - MTF02",
+"Apple Watch Series 3-38 mm, Silver Aluminum Case - MTEY2",
+"Samsung SM-R820N Galaxy Watch Active 2, 44mm, Aluminium - Aqua Black (Pack of 1)",
+"Smart Watch FKANT Fitness Trackers Bluetooth Fitness Watch with Heart Rate Sleep Monitor 5ATM Waterproof Pedometer Calorie Counter Activity Tracker for Men Women",
+"Apple Series 3 GPS + Cellular Green/Blue Strap Smart Watch - MQMD2AE/A, iOSMQMD2AE/A",
+"HUAWEI WATCH GT2e Smartwatch, 1.39",
+"MiniDeer Smart Watch,Fitness Tracker with Heart Rate Monitor,IP67 Waterproof Fitness Watch with Pedometer,Smartwatch Compatible with iOS, Android for Men, Women (Pink)",
+"Amazfit GTS 2 Smartwatch with Alexa Built-In, 1.65",
+"B BRAND CODE U68 PLUS Large Touch Screen 1.6 Inch Spin Button Smartwatch for men Fitness Waterproof Heart Rate Sleep Phone Call Message Alarm 30 Days Super Long Standby Free Mobile Holder(BLACK)",
+"Smartwatch W26",
+"AGPTEK Smartwatch Fitness Watch for Men Women with Replacement Strap Touchscreen 1.3",
+"Smart Watch Blood Oxygen Fitness Tracker Heart Rate Monitor IP65 For Android iOS",
+"2020 Smart Watch Bluetooth Call Heart Rate Blood Pressure Monitor Fashion Watch",
+"Bluetooth Smart Watch for iPhone Android Phone Waterproof Fitness Tracker Watch",
+"Apple Watch Series 4 44mm Space Gray Aluminum Case Black Sport Band",
+"Samsung Galaxy Gear S3 Classic 46mm SM-R770 Bluetooth Smartwatch Silver",
+"Smart Watch for iPhone iOS Android Phone Bluetooth Waterproof Fitness Tracker",
+"Amazfit Bip U Smartwatch 5ATM Display a colori resistente all'acqua GLONASS",
+" Apple Watch Series 3 38mm Stainless Steel Case (GPS + Cellular) - (MQLV2B/A) ",
+"Nokia Steel Activity & Sleep Watch 36mm White",
+"HOT Samsung Galaxy Gear S3 Classic 46mm Stainless Steel Smartwatch SM-R770",
+"Waterproof Bluetooth Smart Watch Phone Mate for iphone IOS Android Samsung",
+"LOKMAT ATTACK Smart Watch Fitness Tracker Blood Pressure Heart Rate Monitor",
+"M4 Smart Watch Sport Wristband Heart Rate Fitness Tracker Waterproof Bracelet",
+"Apple Series 5 40mm Gold Aluminum Case Pink Sand Sport Band Smart Watch GPS Cell",
+"2019 Emporio Armani Men's Connected Smartwatch ART5021 iPhone Android Samsung",
+"Microwear L13 Smart Watch Waterproof ECG PPG Call Blood Pressure for IOS Android",
+"YoYoFit Fitness Tracker Smart Watch, Blood Pressure Heart Rate Monitor Watch,...",
+"Smart Watch Blood Pressure Heart Rate Monitor Waterproof Fitness Tracker Watches",
+"Apple Watch Series 6 5 3 SE 3D Edge Tempered Glass Full Screen Protector 40/44mm",
+"Waterproof Smart Watch, Fitness Tracker, Heart Rate/Blood Pressure Monitor Black",
+"Garmin Venu Light Sand Rose Gold (English Only)",
+"Smart Women kw10 Waterproof ip68 Bluetooth notifications for Android and IOS Gold",
+"AIKELA Fitness Trackers, IP68 Waterproof Watch with Heart Rate Pink ",
+"Bluetooth Smart Watch M4 Heart Rate Blood Pressure Fitness FIT#BIT Sport Tracker",
+"OPPO Watch 46mm Wifi Smart Watch... Global Version... GOLD COLOR",
+"Smart t500 Call Bluetooth Android iPhone Fitness Tracker",
+"Apple Watch Series 5 - GPS - GPS + Cellular - 40MM 44MM - Gray - Silver - Gold",
+"Smart Watch, New Full Touch Screen Smartwatch, Fitness Tracker with HR...",
+"Smart Watch Fitness Tracker for Women Men Activity Watch and Heart Rate...",
+"GOKOO Smart Watch for Men Activity Tracking Heart Rate Blood Pressure...",
+"2020 Sport Smart Watch Women Men Heart Rate For iPhone Android iOS Waterproof",
+"Smart Watch Smart Bracelet Sport W/ Body Temperature Heart Rate Fitness Monitor",
+"ID115 Plus Sport Smart Watch Bracelet Heart Rate Pedometer Fitness Tracker",
+"Business Bluetooth Call Smart Watch Heart Rate Sports Fitness Tracker Bracelet",
+"Zeblaze VIBE 6 Men Smart watch Music Player Bluetooth Call Heart Rate Monitor",
+"New Bluetooth Call Smart Watch Blood Pressure Heart Rate Monitor For iOS Android",
+"[Fully Refurbished] Pebble Steel Stainless Case (Silver/Black)",
+"Oppo Orologio 46MM Wi-Fi- 1.91-inch Amoled Flessibile Dual-Curved Screen-Android",
+"2020 Sport Smart Watch Fitness ECG Blood Pressure Heart Rate Monitor iOS Android",
+"Microwear L19 ECG Smart Watch BT-Call IP68 For Android IOS Sport Fitness Tracker",
+"GT05 Sport Smart Watch Heart Rate Blood Pressure Monitor Business Bluetooth Call",
+"Smart Watch Blood Pressure Oxygen Heart Rate  Monitor Bracelet For iOS Android",
+"L17 Sport Smart Watch Men ECG+PPG Vibration Blood Pressure Heart Monitor N2U1",
+"Smart Watch Fitness Sport Activity Tracker Heart Rate Monitor For Android iOS",
+"Smart Watch Bluetooth Call Sports Fitness Tracker Wristband Dual Color Dual Pin",
+"Waterproof Bluetooth Parameter Smart Watch For iPhone Samsung Men Women Kids",
+"Smart Watch ECG Body Temperature Blood Pressure Heart MT01 Rate Bracelet A5N4",
+"Smart Watch Heart Rate Monitor Fit Activity Tracker iPhone Android Touch Screen",
+"Smart Watch Bluetooth Fitness Tracker Warning Removable Fashion Waterproof GPS",
+"Smart Watch LV69 Sport Fitness Tracker Wristband for Android Gifts NEW",
+"Smart Watch Fitness Sport Activity Tracker Heart Rate Monitor For Android iOS",
+"Smart Watch Bracelet Heart Blood Pressure Probe Fitness",
+"1Pcs 119Plus Smart Watch Bracelet Heart Rate Blood Pressure Monitor Tracker U5T5",
+"L16 Sport Smart Watch Uomo ECG + PPG Vibrazione Pressione sanguigna",
+"Smart Watch Men HD Large Screen 5D Bluetooth Call Heart Rate Monitor",
+"M96 Smart Watch Heart Rate Blood Pressure Monitor Bluetooth Call For Android iOS",
+"M96 Smart Watch Heart Rate Blood Pressure Monitor Bluetooth Call For Android iOS",
+"Smart Watch for Android iOS Phone Bluetooth,Pedometer",
+"Microwear S30 Smart Watch Heart Rate Blood Pressure Monitor Sports Bracelet",
+"Fitness Smart Watch Activity Tracker Adult Kid Heart Rate For Android iOS Phones",
+"Kids Anti-lost GPS Fitness SOS Call Camera IP68 Waterproof",
+"DT98 Smart Watch Rate Pressure Monitor Fitness Tracker Waterproof Wristwatch",
+"Kids Anti-lost GPS Fitness SOS Call Camera IP68 Waterproof",
+"Bluetooth Smart Watch Heart Rate Blood Monitor Wristband Sports Bracelet",
+"Smart Watch Band Heart Rate Blood Pressure Monitor Tracker Fitness Wristband",
+"Bluetooth Smart Watch Fitness Tracker Call Reminder For Android Samsung LG K7 K8",
+"Smart Watch Bracelet Wristband Fitness Heart Rate BP Monitor iPhone Android",
+"5Pcs Original Silicon Wristband Bracelet Wrist Strap for XIAOMI MI Band 3",
+"Zeblaze Hybrid Blood Pressure Fitness Monitor Waterproof Mechanical Smart Watch",
+"Heart Rate Blood Pressure Sport Fitness Pedometer",
+"Smartwatch Bluetooth connected watch health monitor ios android y68 38mm 1,3",
+"Smart Bracelet Sport Smart Watch Body Temperature Heart Rate Monitor Hot D3B2",
+"Smart Watch Multifunction Wrist Watch Heart Rate Monitor Smartwatch Bracelet",
+"Smart Bracelet Bluetooth Fitness Tracker Call Reminder For Women Samsung Xiaomi",
+"Smart Watch LV69 Sport Fitness Tracker Wristband for IPhone Android",
+"2020 New Smart Bracelet Watch Waterproof Sport Fitness Tracker for iOS & Android",
+"Zeblaze Thor Pro 3g 1.53 inch Call Bluetooth IPS 1 GB + 16 GB WiFi GPS SM",
+"1.44 In Kids Waterproof Anti-lost SOS Call Touch Camera",
+"LIGE Smart Watch Heart Rate Monitor Blood Pressure Fitness tracker camera remote",
+"For Xiaomi Mi Band 3/4 Smart Bracelet Watch Band Strap Metal Wrist",
+"M5 Smart Band Watch Bracelet Wristband Fitness Tracker Blood Pressure Heart Rate",
+"Bluetooth Large Screen Smart Watch 320x240 GPS Watch 130W Heart Rate Monitor",
+"Men Sport Smart Watch IP67 Waterproof ECG Blood Pressure Monitor Fitness Tracker",
+"Q18 Smart Watch 1.7 inch Heart Rate Blood Pressure Pedometer Monitor N9E6",
+"2021 New Smart Watch LV69 Sport Fitness Tracker Wristband for IPhone Android DIY",
+"Smart Watch Heart Rate Monitor Blood Pressure for iOS8.0 for Android5.0 Bracelet",
+"Checking Blood Oxygen Heart Rate Smart Watch Waterproof Swim Watch Tracker E3F6",
+"Oppo Watch 46MM Wi-Fi - sistema operativo Google Wear - versión global - Android",
+"Fitness Tracker with Body Temperature Waterproof Smart Fitness Watch for Women",
+"1x Smart Watchs Men Women Heart Rate Monitor Blood Pressure Smartwatchs A8R5",
+"Smart Bluetooth Sport Bracelet Heart Rate Blood Pressure Monitor Smart Band AU",
+"[Face Unlock] ticwris Max 2,86 inch HD Smart Watch Touchscreen 3g + 32g 4g-lt",
+"Bluetooth Smart Watch Women's 0.96",
+"Xiaomi Smart Watch For Android iOS Haylou Smartwatch 2020 For Men Women Sport",
+"Monkeylectric Bsmart Smartwatch - Black - New opened boxes -rrp£109.99",
+"Sports Smart Watch Multifunction Smartwatch Fitness Tracker for Women Men",
+"Waterproof Heart Rate Monitor Fitness Sports Bracelet Wristband",
+"Lenovo Carme Black Smart Watch-t0r",
+"M5 Smart Band Watch Bracelet Wristband Blood Pressure Heart Rate Tracker US",
+"Bluetooth Call Play Smart Watch Sleep Monitoring Drinking Rreminder",
+"Bluetooth 4.0 Smart Watch Daily waterproof LED Display for iOS for Android",
+"Smart Watch LV69 Sport Fitness Tracker Wristband for IPhone Android Hot New UK",
+"Bleu Résistant SPORTS Montre Smart Imperméable Fitness Traqueur N Chargement G40",
+"W8 Smart Watch Android iOS Apple IPhone Samsung SmartWatch For Kids Men Women",
+"Fitness Tracker Color Screen Heart Rate Monitor Watch Step Counter for Men Women",
+"Women Men Smart Steel Milanese Bracelet Watch Fitness Tracker Blood Pressure",
+"Smart Watch LCD Waterproof Heart Rate Tracker Fitness Wristband W2Q1",
+"HD Touch Screen Smart Watch Men Sports Bluetooth Music Play Activity Cardio Gift",
+"M5 Smart Band Watch Bracelet Wristband Blood Pressure Heart Rate Fitness Tracker",
+"Uomo Sport Smart Watch cardiofrequenzimetro ossigeno nel sangue monitoraggio del",
+"Wristbands Smart Watch EX18 Pedometer Android Ios Bluetooth Sport Waterproof",
+"L16 Sports Smart Watch Men ECG+PPG Vibration Blood Pressure Heart Rate Monitor",
+"Waterproof Women Smart Watch Bracelet Sport Fitness Tracker Fashion IP68",
+"Sport Smart Watch ECG + PPG Heart Rate Blood Pressure Monitor for Women Men",
+"2021 NEW SmartWatch Men Women IP67 Waterproof Heart Rate Monitor For Android iOS",
+"D13 Smart Watch Heart Rate Blood Pressure Monitor Fitness Tracker Watch O6W9",
+"Smart Watch Gifts Bluetooth Heart Rate Blood Pressure Monitor Fitness Tracker UK",
+"Inseguitore di fitness da polso impermeabile con orologio da polso Bluetooth",
+"Waterproof Bluetooth Smart Watch Siri Voice Control for IOS Android Men Women",
+"1.3 inch DT88 PRO Waterproof Smart Watch ECG Heart Rate Monitor for iOS Android",
+"Waterproof Kids Smart Watch Anti-lost Safe GPS Tracker SOS Call For Android iOS",
+"LIGE Fitness Tracker Watch with Blood Oxygen & Blood Pressure MonitoringTouch",
+"LATEST DZ09 Bluetooth Smart Watch Camera SIM Slot For HTC Samsung Android iPhone",
+"Smart Watch Sport Fitness Activity Tracker Steps Counter Touch Screen Wristwatch",
+"Pieno e Rotondo Monitor della Frequenza Cardiaca Bluetooth Intelligente",
+"Noise Fit Fusion Hybrid Smart Watch with Leather Strap (Black)-LOj",
+"Smart Watch Blood Pressure Monitor Bracelet Wristband Heart Rate for Android iOS",
+"Braccialetto sportivo impermeabile Bluetooth Smart Watch IP67 per Iphone Android",
+"NEW Bluetooth Smart + Heart Rate Blood Pressure Monitor Sport Bracelet",
+"Sports Smart Watch Men ECG+PPG Vibration Blood Pressure Rate Heart Monitor J8L7",
+"Notifica APP con tracker fitness smart watch rotondo chiamata Bluetooth",
+"Touch Screen Smart Watch Heart Rate Sport Bracelet for Samsung A11 A21s A41s A51",
+"SENBONO S20 Smart Watch 1.3-Inch Fulltouch Screen BT5.0 IP68 Waterproof H7P5",
+"Smart Bracelet Heart Rate Band Blood Pressure Fitness Tracker Screen Sport Watch",
+"Smart Watch Bluetooth Waterproof Heart Rate Monitor Fitness Tracker Bracelet",
+"Smart Watch for Women Elegant Smartwatch with Heart Rate Calories",
+"Sport Bluetooth Chiamata Rotonda Astuto Della Vigilanza Inseguitore di Fitness",
+"Women's Smart Watch Heart Rate Monitor Calls Reminder Sport for Samsung LG Moto",
+"Smart Watch Unisex Fitness Tracker Heart Rate Monitor Bluetooth IOS Android 2021",
+"2021 Newest Smart Watch Fully Touch Screen Bluetooth Smart Watch Fitness Tracker",
+"Smart wrist watch sport fitness smartband similar to xiaomi mi band 5",
+"Kids Anti-lost GPS Fitness SOS Call Camera IP68 Waterproof",
+"Touch Screen Smart Watch Bluetooth Call Heart Rate Monitor For Samsung S10 S9 S8",
+"Smart Sport Bracelet Bluetooth 4.0 Heart Rate Blood Pressure for iOS Android",
+"Smart Fitness Blue Watch Health Monitor",
+"Kids GPS Smartwatch 1.44 In Anti-lost Sport For Children Girls Boys",
+"Pushmen Fitness Tracker Smart Watch Activity Pink Silicone Strap Bracelet Touch",
+"Men Bluetooth Smart Watch ECG Heart Rate Monitor Sport Watch for iPhone Samsung",
+"Bracciale Tracker Fitness Bluetooth Smart 4.0 bluetooth frequenza cardiaca",
+"Girls Smart Watch Heart Rate Monitor Pedometer Message/Call Reminder Wristwatch",
+"DM99 Big Screen Smart Watch Smartwatch GPS Wristwatch 130W",
+"Smart Watch Fitness Tracker Heart Rate Monitor for LG Samsung A11 A21s A41s A51",
+"Universal Smart Bracelet Strap for Samsung fit2 R360 /fit2 pro R365  black",
+"Smart Watch Heart Rate Monitor Blood Pressure Fitness tracker remote camera",
+"For LIGE Watch Heart Rate Monitor Blood Pressure Fitness Tracker Remote Camera",
+"Q8 Bluetooth Smart Watch Bracelet Heart Rate&Blood Pressure Fitness Tracker",
+"Michael Kors Gen 4 Genuine Smart Watch, fully working digital Dial, MKT5048 AY26",
+"Dz09 bluetooth smart watch phone smart watch wrist android phone",
+"Kid Waterproof Call Support Wristwatch Smartwatch Wristband",
+"Women Ladies Smart Watch Bluetooth Bracelet Calls Reminder for iPhone Samsung LG",
+"Bluetooth 4.0 Smart Watch Female IPS Color Screen Bracelet Fitness Wristband",
+"Smart watch smart watch bluetooth connected barcelet for phone",
+"Women Men Smart Watch Sport Bracelet Touch Screen Fitness Tracker Pedometer",
+"Y68 Smart Bracelet Watch Band Heart Rate Monitor Fitness Tracker for IOS Android",
+"Fitness Smart Watch Activity Tracker Wrist Band Bracelet Health Sport R4S3",
+"Smart Watch Heart Rate Blood Pressure Sport Bracelet For Men Women Ladies Boys",
+"Bluetooth Smart Watch Sleep Monitor Wristwatch For Android Huawei P40 Samsung A7",
+"Bluetooth Smart Watch Heart Rate Monitor Call Remind For Android Samsung S10 S20",
+"Business Smart Watch Heart Rate Monitor Calls Reminder for Android iOS Phones",
+"M3 Smart Watch Heart Rate Monitor Blood Pressure Smart Bracelet for iOS Android",
+"Original Global version Mi Band 5 Smartwatch Band 5 Sport Watch for IOS Android",
+"Zeblaze VIBE 5 Sports Men Women Smart Watch Heart Rate Monitor IP67 for Phone",
+"Women Girls Smart Watch Touchscreen Bracelet Heart Rate Fitness Activity Tracker",
+"Michael Kors Gen 4 Genuine Smart Watch fully working MKT5044 CO790",
+"Smart Women Business Sport Watch Bluetooth Monitor Heart Rate Waterproof For iOS",
+"Smart Bracelet Watch Heart Rate Monitor Blood Pressure Fitness Tracker",
+"Hatsune Miku Magical Future 2017 OFFICIAL ALBUM Limited Edition DVD",
+"Delle Donne degli uomini Smart Orologio di Sport Fitness Tracker Heart Rate",
+"Elderly SOS Emergency Voice Call Anti-Lost GPS Positioning Smart Wristband",
+"M5 Bluetooth Smart Bracelet Band Heart Rate Monitor Watch Pedometer Tracker AU",
+"Touch Screen Smart Watch Body Temperature Monitor Fitness Activity Tracker Sport",
+"Smart Watch Heart Rate Health Wristwatch For Android Samsung S20 S10 S10 Plus S9",
+"T8 Bluetooth 4.0 Smart Watch Support SIM and TFcard Camera For Android iPhone",
+"Thermometer Oximeter Smart Pulse Cardio Pressure Pedometer Black",
+"Spovan Altimeter Barometer Compass LED Digital Pocket Watch Red Black",
+"Fashion Bluetooth Smart Wrist Watch with Camera for Men Women iOS Android Black",
+"Full Round HD Screen Wristband bluetooth Call ECG Heart Rate Monitor   p i",
+"Waterproof Kids Smart Watch Anti-lost Safe GPS Tracker a Call SOS a B4N8",
+"Heart Rate Fitness Tracker Sport Smart Wrist Watch Bracelet Smartwatch For Gifts",
+"T5 Smart Watch 1.3 Wristband Waterproof Blood Oxygen Pressure Heart Rate Monitor",
+"New Sport Fitness Tracker Smart Watch Camera Smartwatch For iPhones Android",
+"N58 Smart Watch Full Touch ECG+PPG Health Monitor Sport Bracelet HOT SALE",
+"N58 Smart Watch Full Touch ECG+PPG Health Monitor Sport Bracelet HOT SALE",
+"Samsung Galaxy Active 2 Aluminum 44mm R820 BT Aqua Black",
+"Bluetooth Smart Watch Sport Wristwatch Calls Reminder for iPhone Samsung Android",
+"Fossil Gen 4 Authentic Digital Dial Smart Watch Custom Band FTW6014 AB461",
+"Fitness Tracker Pedometer Step Counter Call SMS SNS Notice for Women Men Kids ",
+"Full Touch Screen Smart Watch Sport Fitness Tracker Message Reminder for Android",
+"Smart Watch Wristband Bracelet Band Step Counter Pedometer Activity Tracker",
+"Smart Watch for Android Mens Heart Rate Blood Pressure Monitor Black+Grey",
+"Men Women Bluetooth Smart Watch Fitness Activity Tracker Remote Camera Bracelet",
+"S20 Smart Watch Men IP68 Waterproof Fitness Tracker Heart Rate Monitor Red",
+"Full Touch Screen Smart Watch Sport Fitness Activity Tracker Heart Rate Monitor",
+"Men Boys Smart Watch Touchscreen Heart Rate Blood Pressure Monitor Sleep Tracker",
+"E04S Smart Watch Body Temperature Blood Pressure Heart Rate Monitor iOS Android",
+"Luxury Bluetooth Smart Watch Phone Waterproof Sports Bracelet Heart Rate Monitor",
+"L11 Smart Watch IP68 Waterproof PPG+ECG Heart Rate Blood Pressure Oxygen Monitor",
+"LIGE Full Circle Touch Smart Watch Women Waterproof Bracelet Heart Rate Monitor",
+"Smart Watch Sports Watch Led Screen Waterproof Fitness Track Tracker Rate X0C6",
+"Smart Watch Fitness Activity Tracker with Bluetooth Headsets for iPhone Android",
+"Smart Watch Sport Fitness Tracker Heart Rate Monitor",
+"Smart Watch Fitness Tracker Notification Push Monitor Wristwatch Red",
+"Smart watch Color monitor Monitor blood pressure Oxygen Sports Water resistant",
+"Heart Rate Fitness Tracker Sport Smart Wrist Watch Bracelet Smartwatch For Gifts",
+"Smart-Watch IP68 Fitness-Tracker Screen No.1 Dt98 Waterproof Men Full Screen",
+"Kids GPS Smartwatch 1.44 In Anti-lost Sport For Children Girls Boys",
+"LIGE Bluetooth Call SmarWatch Men Women Heart rate blood pressure Monitor Waterp",
+"Heart Rate Fitness Tracker Sport Smart Wrist Watch Bracelet Smartwatch For Gifts",
+"smartwatch phone Andriod DV2-BBG",
+"Smartwatch Fitness Tracker Sleep Monitor Step Counter Call/ SMS Message Reminder",
+"Smart Digital Business Outdoor Sport Watch Bluetooth Monitor Heart Rate For iOS",
+"Sport Smart Watch Call Heart Rate Tracker Healthy Monitor for IOS Android IP68 ",
+"Smart Bracelet Cross-border Exercise Pedometer Blood Rate Pressure Heart O8C5",
+"Sostituzione cinturino cinturino silicone nero per Samsung Galaxy Watch 1pz",
+"Fitness Tracker Touch Screen Smartwatch IP68 Waterproof - Heart Rate Monitor",
+"Noise Fit Fusion Hybrid Smart Watch with Leather Strap (Black)-0EQ",
+"Michael Kors Gen 4 Genuine Smart Watch working W/ Custom Band MKT5054 RZ100",
+"F22 SMART WATCH IP67 IMPERMEABILE DA UOMO FULL TOUCH SPORT OROLOGIO DA POLSO",
+"LIGE Full Screen Touch Smart Watch Men Women Heart Rate Blood Pressure Monitor W",
+"Pro DSTIKE Deauther Watch Programmable Board Arduino Wearable NodeMCU Wristband",
+"Sport Smartwatch Full Touch Men Fitness Tracker Blood Pressure Sleep Monitor",
+"Waterproof Bluetooth Smart Watch Phone Mate For Phone IOS Android",
+"Bluetooth Smart Watch Heart Rate Oxygen Blood Pressure Fitness Tracker QW16",
+"Chiamata Bluetooth Smartwatch Lettore Musicale Inseguitore di Fitness per il",
+"Smart Bracelet Sport Smart Watch Body Temperature Heart Monitor Hot Rate F8E8",
+"Bluetooth Smart Watch ECG + PPG Heart Rate Blood Pressure Monitor Sport Bracelet",
+"Men's Waterproof Smart Sport Watch Military Grade Super Tough Tact Outdoor",
+"DT95 Men Smart Watch Bluetooth Call ECG Heart Rate Fitness F Android H0H1",
+"L8 Smart Watch IP68 PPG ECG Blood Oxygen Pressure Heart Rate For Android iPhone",
+"Anti-Lost Smart Watch 1.9",
+"Smart watches man Waterproof Sports Heart Rate Monitor Pressure Functions X1T4",
+"Men IP67 Sport Bluetooth 4.0 Body Temperature Smart Watch Bracelet Wristband",
+"Zeblaze VIBE 6 Sports Smart Watch Bluetooth-Call Receive/Make Heart Rate Monitor",
+"Women Smart Watch Sport Fitness Tracker Heart Rate Monitor   Bracelet Wristband",
+"Fitness Tracker Body Temperature Watch with Heart Rate Blood Oxygen Blood",
+"D18 BT4.0 Smart Watch HeartRate Blood Oxygen Fitness Tracker Bracelet J1A0",
+"Women Ladies Smart Watch Body Temperature Heart Rate Blood Pressure Monitoring",
+"Elderly SOS Emergency Voice Call Button Real GPS Positioning Smart Bracelet",
+"Garmin Vivoactive 4 Black with Slate (English Only)",
+"ECG Bluetooth Smart Watch Heart Rate Monitor for Samsung S20 S10 S9 J8 J7 J6 HTC",
+"Zeblaze Bluetooth 5.0 3.0 60 orologio da polso Smart Watch Wristband Wristband",
+"Watch Intelligent Smart Bluetooth Heart Rate Blood Pressure Fit",
+"Hatsune Miku Magical Future 2017 OFFICIAL ALBUM Limited Edition DVD",
+"Samsung Gear S3 Classic Smartwatch SM-R770 46mm Black Leather 4GB 380mAh More",
+"Women Men Smart Watch Heart Rate Monitor Call/Message Reminder Sport Wristwatch",
+"Smartwatch smart wristwatch pedometer fitness tracker waterproof sh",
+"Smart Watch ECG Body Temperature Blood Pressure Heart Rate Bands Health P3D6",
+"Smart Bracelet Fitness Watch X1 Smartwatch Color Screen Bracelet Bracelet Heart",
+"Unisex di Sport di Modo Astuto Della Vigilanza di Tocco Pieno Sottile Delle",
+"Q18 Bluetooth Smart Watch Clock Support SIM Card For iPhone Screen Android W9I6",
+"Fossil Gen 4 Authentic Genuine Digital Dial Smart Wrist Watch FTW4012 LT786",
+"Portable Children Smart GPS Watch with Flashlight Waterproof Outdoor Accessories"
+
+]
+        
+        
+function checkSimilarity(){
+    filtered_names = []
+    var str1 = document.getElementById("movie_name").value;
+    for(var i=0;i<all_titles.length;i++){
+        var str2 = all_titles[i];
+        var score = similarity(str1, str2);
+        if(score>0.50){
+            filtered_names.push(str2);
+        }
+    }
+    if(filtered_names.length<1){
+        document.getElementById("suggestions").innerHTML = "Please try again. Either input movie name is misspelled badly or not present in database.";
+    }else{
+        document.getElementById("suggestions").innerHTML = filtered_names;  
+    }
+}
+
+function similarity(s1, s2) {
+      var longer = s1;
+      var shorter = s2;
+      if (s1.length < s2.length) {
+        longer = s2;
+        shorter = s1;
+      }
+      var longerLength = longer.length;
+      if (longerLength == 0) {
+        return 1.0;
+      }
+      return (longerLength - editDistance(longer, shorter)) / parseFloat(longerLength);
+    }
+
+    function editDistance(s1, s2) {
+      s1 = s1.toLowerCase();
+      s2 = s2.toLowerCase();
+
+      var costs = new Array();
+      for (var i = 0; i <= s1.length; i++) {
+        var lastValue = i;
+        for (var j = 0; j <= s2.length; j++) {
+          if (i == 0)
+            costs[j] = j;
+          else {
+            if (j > 0) {
+              var newValue = costs[j - 1];
+              if (s1.charAt(i - 1) != s2.charAt(j - 1))
+                newValue = Math.min(Math.min(newValue, lastValue),
+                  costs[j]) + 1;
+              costs[j - 1] = lastValue;
+              lastValue = newValue;
+            }
+          }
+        }
+        if (i > 0)
+          costs[s2.length] = lastValue;
+      }
+      return costs[s2.length];
+    }
+        
+    checkSimilarity()
+
+function randomNum()
+        {
+            "use strict";
+            return Math.floor(Math.random() * 9)+1;
+        }
+            var loop1,loop2,loop3,time=30, i=0, number, selector3 = document.querySelector('.thirdDigit'), selector2 = document.querySelector('.secondDigit'),
+                selector1 = document.querySelector('.firstDigit');
+            loop3 = setInterval(function()
+            {
+              "use strict";
+                if(i > 40)
+                {
+                    clearInterval(loop3);
+                    selector3.textContent = 4;
+                }else
+                {
+                    selector3.textContent = randomNum();
+                    i++;
+                }
+            }, time);
+            loop2 = setInterval(function()
+            {
+              "use strict";
+                if(i > 80)
+                {
+                    clearInterval(loop2);
+                    selector2.textContent = 0;
+                }else
+                {
+                    selector2.textContent = randomNum();
+                    i++;
+                }
+            }, time);
+            loop1 = setInterval(function()
+            {
+              "use strict";
+                if(i > 100)
+                {
+                    clearInterval(loop1);
+                    selector1.textContent = 4;
+                }else
+                {
+                    selector1.textContent = randomNum();
+                    i++;
+                }
+            }, time);
+</script>
+
+</body>
+</html>
